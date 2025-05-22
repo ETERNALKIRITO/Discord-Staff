@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situational Questions - Axinity Staff Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://ik.imagekit.io/9llyyueko/STATIC%20IMAGES/icon256.png?updatedAt=1745897134054" type="image/png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Banner Section -->
+        <div class="banner-wrapper">
+            <div class="banner-image"></div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content-card">
+            <h1>Situational & Experience-Based Questions</h1>
+            <p class="form-description">
+                These questions help us understand your previous experiences, your approach to common scenarios, and your thought process. 
+                Please be as detailed and honest as possible. Fields marked with an asterisk (*) are required.
+            </p>
+
+            <!-- === MODIFIED FORM TAG for Netlify === -->
+            <form 
+                id="situationalQuestionsForm" 
+                name="staff-application" <!-- FORM NAME FOR NETLIFY -->
+                data-netlify="true" 
+                data-netlify-honeypot="bot-field"
+                method="POST" 
+                action="/thank-you.html" <!-- Fallback/JS-disabled action -->
+            >
+                <!-- This field is required by Netlify for AJAX submissions if you don't set a name on the form element in JS -->
+                <input type="hidden" name="form-name" value="staff-application" />
+
+                <!-- Hidden honeypot field for Netlify spam protection -->
+                <p style="display:none;">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                </p>
+
+                <!-- All your form-group divs for questions -->
+                <div class="form-group">
+                    <label for="previous-experience">Do you have previous moderation/administration experience?* <span class="optional-text">(If yes, describe the server(s), your role, responsibilities, and duration. If no, please state "No previous experience".)</span></label>
+                    <textarea id="previous-experience" name="previous_experience" rows="6" placeholder="e.g., Server Name: XYZ Community, Role: Moderator, Responsibilities: Handled user reports, enforced chat rules, organized small events. Duration: 6 months. OR No previous experience." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivation">What motivates you to apply for a staff position specifically at Axinity?*</label>
+                    <textarea id="motivation" name="motivation" rows="4" placeholder="Tell us what excites you about our community and this role." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="strengths-weaknesses">What do you consider your key strengths and weaknesses as a potential staff member?*</label>
+                    <textarea id="strengths-weaknesses" name="strengths_weaknesses" rows="5" placeholder="Strengths: e.g., Patient, good communicator, quick learner. Weaknesses: e.g., Can be too direct at times, still learning X skill. Be honest!" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="responsibility-scale">On a scale of 1 (Not at all) to 10 (Extremely), how responsible do you consider yourself?*</label>
+                    <select id="responsibility-scale" name="responsibility_scale" required>
+                        <option value="" disabled selected>Select a rating...</option>
+                        <option value="1">1 - Not at all responsible</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 - Moderately responsible</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10 - Extremely responsible</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rules-understanding">How would you ensure you fully understand and can correctly apply Axinity's server rules?*</label>
+                    <textarea id="rules-understanding" name="rules_understanding" rows="3" placeholder="e.g., Thoroughly read all rule channels, ask senior staff for clarification on ambiguities, observe how current staff handle situations." required></textarea>
+                </div>
+
+                <hr class="form-divider">
+                <h2 class="scenario-heading">Scenario-Based Questions:</h2>
+
+                <div class="form-group">
+                    <label for="scenario-friend">Scenario: A user is clearly breaking a server rule. However, they are a long-time, well-liked member of the community and perhaps even a friend. How would you handle this situation?*</label>
+                    <textarea id="scenario-friend" name="scenario_friend" rows="5" placeholder="Describe your thought process and the steps you would take, ensuring fairness and rule enforcement." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="scenario-harassment">Scenario: A user reports to you that they are being harassed by another member in DMs or within the server. What steps would you take to investigate and resolve this?*</label>
+                    <textarea id="scenario-harassment" name="scenario_harassment" rows="5" placeholder="Consider privacy, evidence gathering, and support for the victim." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="scenario-staff-breaking-rules">Scenario: You witness another staff member clearly breaking server rules or abusing their privileges (e.g., unfair mutes/bans, disrespectful behavior). What would you do?*</label>
+                    <textarea id="scenario-staff-breaking-rules" name="scenario_staff_breaking_rules" rows="5" placeholder="Explain your approach, considering hierarchy and the importance of staff integrity." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="scenario-spam-ignoring-warnings">Scenario: A member is repeatedly spamming the chat despite verbal warnings. What are your next steps?*</label>
+                    <textarea id="scenario-spam-ignoring-warnings" name="scenario_spam_ignoring_warnings" rows="4" placeholder="Detail the escalation process you would follow." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="scenario-inappropriate-content">Scenario: A player is posting highly inappropriate or offensive content (e.g., hate speech, NSFW material) in a public channel. How do you react immediately, and what follow-up actions do you take?*</label>
+                    <textarea id="scenario-inappropriate-content" name="scenario_inappropriate_content" rows="5" placeholder="Focus on swift action, evidence preservation, and appropriate sanctions." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="scenario-heated-argument">Scenario: Two members are engaged in a very heated argument in a voice or text channel, and it's disrupting the environment. How would you intervene to de-escalate the situation?*</label>
+                    <textarea id="scenario-heated-argument" name="scenario_heated_argument" rows="5" placeholder="Describe your communication strategy and potential actions." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="scenario-disagreement-staff">Scenario: You disagree with a decision made by another staff member or a new server policy. How would you address your concerns?*</label>
+                    <textarea id="scenario-disagreement-staff" name="scenario_disagreement_staff" rows="4" placeholder="Explain how you would communicate your perspective constructively and professionally." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="anything-else">Is there anything else you'd like to share or believe is important for us to know about you or your application? <span class="optional-text">(Optional)</span></label>
+                    <textarea id="anything-else" name="anything_else" rows="4" placeholder="This is your space for any additional comments, skills, or aspirations."></textarea>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="general-questions.html" class="cta-button secondary-button">Previous: General Questions</a>
+                    <button type="submit" class="cta-button">Submit Application</button> <!-- This triggers modal -->
+                </div>
+            </form>
+        </div> <!-- End of .content-card -->
+
+       <footer class="app-footer">
+            <p><a href="https://discord.gg/2mCK999m" target="_blank" rel="noopener noreferrer" class="discord-link">Axinity Main Branch</a> - Staff Applications</p>
+        </footer>
+
+    </div> <!-- End of .app-container -->
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>Final Confirmation</h2>
+            <p>Before submitting your application, please confirm the following:</p>
+            
+            <div class="form-group">
+                <label for="confirm-rules">Have you read and understood the Axinity Server Rules?*</label>
+                <select id="confirm-rules" name="confirm_rules_modal" required> <!-- Unique name -->
+                    <option value="" disabled selected>Please select...</option>
+                    <option value="yes">Yes, I have read and understood the rules.</option>
+                    <option value="no">No, I have not.</option>
+                </select>
+                <small class="error-message" id="error-rules"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-guarantee">Do you understand that this application does not guarantee you a spot on the staff team?*</label>
+                <select id="confirm-guarantee" name="confirm_guarantee_modal" required> <!-- Unique name -->
+                    <option value="" disabled selected>Please select...</option>
+                    <option value="understand">Yes, I understand.</option>
+                    <option value="not_understand">No, I do not understand.</option>
+                </select>
+                <small class="error-message" id="error-guarantee"></small>
+            </div>
+
+            <button id="finalSubmitButton" class="cta-button">Confirm & Submit Application</button>
+        </div>
+    </div>
+
+    <script src="form-persistence.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('situationalQuestionsForm');
+            const modal = document.getElementById('confirmationModal');
+            const closeModalButton = modal.querySelector('.close-button');
+            const finalSubmitButton = document.getElementById('finalSubmitButton');
+            const confirmRulesSelect = document.getElementById('confirm-rules');
+            const confirmGuaranteeSelect = document.getElementById('confirm-guarantee');
+            const errorRules = document.getElementById('error-rules');
+            const errorGuarantee = document.getElementById('error-guarantee');
+            const generalQuestionsStorageKey = getBasePath('general-questions.html'); // This should now match
+const generalDataString = sessionStorage.getItem(generalQuestionsStorageKey);
+
+            // Helper function to get the correct base path for sessionStorage keys
+          function getBasePath(path) {
+    if (window.location.protocol === 'file:') {
+        const filename = path.split('/').pop();
+        return filename ? '/' + filename : '/unknownpath'; // Ensure it starts with /
+    }
+    return path.startsWith('/') ? path : '/' + path;
+}
+
+
+            if (form) {
+                loadFormData(form); 
+
+                form.addEventListener('input', function() {
+                    saveFormData(form);
+                });
+
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); 
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+                    modal.style.display = 'block';
+                });
+
+                closeModalButton.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+
+                window.addEventListener('click', function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+
+                finalSubmitButton.addEventListener('click', function() {
+                    let isModalValid = true;
+                    errorRules.textContent = '';
+                    errorGuarantee.textContent = '';
+
+                    if (confirmRulesSelect.value !== 'yes') {
+                        errorRules.textContent = 'You must confirm you have read and understood the rules.';
+                        isModalValid = false;
+                    }
+                    if (confirmGuaranteeSelect.value !== 'understand') {
+                        errorGuarantee.textContent = 'You must confirm your understanding regarding a staff spot.';
+                        isModalValid = false;
+                    }
+
+                    if (isModalValid) {
+                        const formDataToSubmit = new FormData(form); 
+                        
+                        formDataToSubmit.append('confirm_rules_modal', confirmRulesSelect.value);
+                        formDataToSubmit.append('confirm_guarantee_modal', confirmGuaranteeSelect.value);
+
+                        // Retrieve and append data from general-questions.html
+                        const generalQuestionsStorageKey = getBasePath('general-questions.html');
+                        const generalDataString = sessionStorage.getItem(generalQuestionsStorageKey);
+                        
+                        if (generalDataString) {
+                            try {
+                                const generalDataObject = JSON.parse(generalDataString);
+                                for (const key in generalDataObject) {
+                                    if (generalDataObject.hasOwnProperty(key)) {
+                                        formDataToSubmit.append(`general_${key}`, generalDataObject[key]);
+                                    }
+                                }
+                            } catch (e) {
+                                console.error("Error parsing general questions data from sessionStorage:", e);
+                            }
+                        } else {
+                            console.warn("No data found in sessionStorage for general questions using key:", generalQuestionsStorageKey);
+                        }
+
+                        finalSubmitButton.textContent = 'Submitting...';
+                        finalSubmitButton.disabled = true;
+
+                        // For Netlify AJAX, the endpoint is often the page the form is on,
+                        // or the `action` attribute if set, or simply '/'.
+                        // Netlify's JS usually handles this, but for `fetch` we specify.
+                        // Using the form's `action` attribute is a good default if set for fallbacks.
+                         const fetchUrl = window.location.pathname; 
+
+                    fetch(fetchUrl, { 
+                        method: 'POST',
+                        body: formDataToSubmit 
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                console.log('Form submitted successfully to Netlify!');
+                                window.location.href = '/thank-you.html'; // Ensure this path is correct
+                            } else {
+                                // Handle HTTP errors from Netlify if submission was received but had issues
+                                console.error('Netlify submission failed with status:', response.status, response.statusText);
+                                response.text().then(text => console.error("Netlify response:", text));
+                                alert('There was an issue with your application submission. Please check the console and try again.');
+                                finalSubmitButton.textContent = 'Confirm & Submit Application';
+                                finalSubmitButton.disabled = false;
+                            }
+                        })
+                        .catch((error) => {
+                            console.error('Network error submitting form to Netlify:', error);
+                            alert('A network error occurred while submitting your application. Please check your connection and try again.');
+                            finalSubmitButton.textContent = 'Confirm & Submit Application';
+                            finalSubmitButton.disabled = false;
+                        });
+                    }
+                });
+
+            } else {
+                console.error('Form with ID "situationalQuestionsForm" not found.');
+            }
+        });
+    </script>
+</body>
+</html>

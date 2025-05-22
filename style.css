@@ -1,0 +1,352 @@
+/* === style.css (Light Theme Version) === */
+
+/* General Body Styles */
+body {
+    background-color: #f0ebf8; /* Original light lavender background */
+    color: #333; /* Default dark text color for readability */
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 30px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+/* Main Application Container */
+.app-container {
+    margin: auto;
+    max-width: 90vw;
+    width: 700px; /* Slightly wider for better form layout */
+}
+
+/* Banner Wrapper */
+.banner-wrapper {
+    border: 1px solid #d1c4e9; /* Softer border color, complements lavender */
+    border-radius: 12px; /* More pronounced rounding for banner */
+    margin-top: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+/* Banner Image Element */
+.banner-image {
+    max-height: 22.5vw;
+    height: 180px;
+    width: 100%;
+    background-image: url(https://ik.imagekit.io/9llyyueko/ANIMATED%20IMAGES/MADE%20BY%20Axinity%20Creations.gif?updatedAt=1747924595302);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Content Card */
+.content-card {
+    background-color: #ffffff; /* White background for the card */
+    padding: 35px; /* Increased padding for more internal space */
+    margin-top: 30px; /* Increased spacing from banner */
+    border-radius: 12px; /* More pronounced rounding */
+    border: 1px solid #e0e0e0; /* Lighter border for the card */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07); /* Softer, slightly larger shadow */
+    text-align: center;
+}
+
+.content-card h1 {
+    margin-top: 0;
+    color: #4A148C; /* Deeper purple for headings, matches Axinity vibe */
+    font-size: 2.1em;
+    margin-bottom: 25px;
+    font-weight: 500; /* Slightly less bold for a cleaner look */
+}
+
+.content-card p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+}
+
+.content-card strong {
+    color: #7289DA; /* Discord blurple for emphasis, or use a theme color */
+    /* color: #6A1B9A; /* Alternative: A purple from the theme */
+}
+
+.discord-link {
+    color: #7289DA; /* Discord blurple for links */
+    text-decoration: none;
+    font-weight: 500;
+}
+.discord-link:hover {
+    text-decoration: underline;
+    color: #5f73bc;
+}
+.content-card strong .discord-link {
+    /* Ensures link within strong tag keeps link color if desired, or inherits */
+    color: #7289DA;
+}
+
+/* Form Description */
+.form-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 35px; /* More space before form */
+    text-align: left;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 28px; /* Increased spacing between form groups */
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #4A148C; /* Theme color for labels */
+    font-size: 1.05em;
+}
+
+.form-group label .optional-text {
+    font-weight: normal;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px; /* Adjusted padding */
+    border: 1px solid #ccc; /* Standard light border */
+    border-radius: 8px; /* Rounded corners for inputs */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    background-color: #fdfdfd; /* Very light input background */
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999; /* Lighter placeholder text */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #7289DA; /* Blurple focus */
+    /* border-color: #8e44ad; /* Alternative: Theme purple focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(114, 137, 218, 0.15); /* Softer focus shadow for light theme */
+    /* box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.15); /* Alt theme focus shadow */
+}
+
+.form-group.hidden-field {
+    display: none;
+    margin-top: 15px;
+}
+
+/* Form Divider and Scenario Heading */
+.form-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0; /* Light divider */
+    margin: 40px 0; /* Increased spacing around divider */
+}
+
+.scenario-heading {
+    font-size: 1.5em; /* Slightly larger */
+    color: #4A148C; /* Theme color */
+    margin-bottom: 25px;
+    margin-top: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background-color: #7289DA; /* Discord blurple */
+    /* background-color: #8e44ad; /* Alternative: Theme purple */
+    color: white;
+    padding: 10px 20px; /* Keeping these smaller as requested */
+    text-decoration: none;
+    border-radius: 8px; /* More rounded buttons */
+    font-weight: 500;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.cta-button:hover {
+    background-color: #5f73bc; /* Darker blurple */
+    /* background-color: #732d91; /* Darker theme purple */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.cta-button:active {
+    transform: translateY(0px);
+    background-color: #5264a3; /* Even darker blurple */
+    /* background-color: #61247c; /* Even darker theme purple */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Navigation Buttons Styling */
+.navigation-buttons {
+    margin-top: 40px; /* Increased spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation-buttons .cta-button {
+    margin-left: 10px;
+}
+.navigation-buttons .cta-button:first-child {
+    margin-left: 0;
+}
+
+/* Secondary button style */
+.cta-button.secondary-button {
+    background-color: #e9e9f0; /* Light grey, distinct from primary */
+    color: #555;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.cta-button.secondary-button:hover {
+    background-color: #d8d8e0;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.cta-button.secondary-button:active {
+    background-color: #c7c7d0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+
+/* Footer Styling */
+.app-footer {
+    margin-top: 50px; /* Increased spacing */
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .app-container {
+        width: 90vw;
+    }
+    .content-card {
+        padding: 25px; /* Slightly less padding on mobile */
+    }
+    .content-card h1 {
+        font-size: 1.8em;
+    }
+    .scenario-heading {
+        font-size: 1.3em;
+    }
+    .navigation-buttons {
+        flex-direction: column-reverse;
+    }
+    .navigation-buttons .cta-button {
+        width: 100%;
+        margin: 8px 0;
+        box-sizing: border-box;
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity for overlay */
+    padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+    background-color: #ffffff; /* Light theme modal background */
+    color: #333;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 550px; /* Maximum width */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: left; /* Override .content-card text-align if modal is inside */
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #4A148C; /* Theme color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    text-align: center;
+}
+
+.modal-content .form-group {
+    margin-bottom: 20px;
+}
+.modal-content .form-group label {
+    font-size: 1em; /* Slightly smaller labels in modal */
+}
+
+.modal-content .cta-button { /* Center the final submit button */
+    display: block;
+    width: 60%;
+    margin: 25px auto 0 auto;
+    text-align: center;
+}
+
+
+/* Close Button for Modal */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.error-message {
+    display: block;
+    color: #D8000C; /* Error red */
+    font-size: 0.85em;
+    margin-top: 5px;
+}
