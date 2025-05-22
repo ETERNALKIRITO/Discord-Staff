@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Downloaded - Axinity Staff Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://ik.imagekit.io/9llyyueko/STATIC%20IMAGES/icon256.png?updatedAt=1745897134054" type="image/png">
+    <style>
+        .methods-section {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f8f5fc; /* Lighter lavender */
+            border-left: 4px solid #d1c4e9; /* Accent border */
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .methods-section h3 {
+            margin-top: 0;
+            color: #4A148C;
+            font-size: 1.1em;
+        }
+        .methods-section p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .next-steps-highlight {
+            background-color: #ede7f6; /* Light purple highlight for next steps */
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #b39ddb; /* Dashed border for emphasis */
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Banner Section -->
+        <div class="banner-wrapper">
+            <div class="banner-image"></div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content-card">
+            <h1>Application File Prepared!</h1>
+            <p>
+                Thank you for completing the Axinity Staff Application form!
+                A JSON file containing your responses should have started downloading to your computer.
+            </p>
+            <p>
+                <strong>File Name Example:</strong> <code>Axinity_Staff_App_YourDiscordName_YYYYMMDD.json</code>
+            </p>
+
+            <div class="next-steps-highlight">
+                <h3><strong>Important Next Steps:</strong></h3>
+                <p>
+                    1. Please locate the downloaded JSON file on your computer.
+                </p>
+                <p>
+                    2. Join our Axinity Discord Server if you haven't already: 
+                    <a href="https://discord.gg/2mCK999m" target="_blank" rel="noopener noreferrer" class="discord-link">Join Axinity Discord</a>.
+                </p>
+                <p>
+                    3. Navigate to the <strong><code>https://discord.com/channels/1208922614979104859/1209228642299945020</code></strong> channel (or the channel specified by staff).
+                </p>
+                <p>
+                    4. Upload the JSON file you downloaded into that channel. You can also add a brief message if you wish.
+                </p>
+            </div>
+            
+            <p style="margin-top: 20px;">
+                If the download did not start automatically, please check your browser's download settings or try submitting the previous page again.
+            </p>
+
+            <div class="methods-section">
+                <h3>Methods for Applications at Axinity:</h3>
+                <p><strong>Self-Applications:</strong> Applicants may write and submit their applications (3-4 paragraphs), including personal information such as time zone, experience, reasons for wanting to join the staff team, etc., directly in the designated channel when this method is open.</p>
+                <p><strong>Handpicking:</strong> Selective recruitment where staff managers or other high-ranking members privately handpick candidates based on trust, reliability, or direct involvement in the community.</p>
+                <p><strong>Staff Application Forms (This Method):</strong> When a large amount of staff is needed, we open applications where candidates fill out a form (like the one you just completed). The downloaded file is then submitted for review by higher-ups.</p>
+            </div>
+            
+            <p>We look forward to reviewing your application!</p>
+            
+            <a href="index.html" class="cta-button">Back to Home (Clears Data)</a>
+        </div>
+
+        <footer class="app-footer">
+            <p><a href="https://discord.gg/2mCK999m" target="_blank" rel="noopener noreferrer" class="discord-link">Axinity Main Branch</a> - Staff Applications</p>
+        </footer>
+    </div>
+
+    <script src="form-persistence.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            clearAllApplicationFormData();
+            console.log('Application data download initiated, all form data cleared from session storage.');
+
+            const homeButton = document.querySelector('.content-card .cta-button');
+            if (homeButton) {
+                homeButton.addEventListener('click', function() {
+                    clearAllApplicationFormData();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

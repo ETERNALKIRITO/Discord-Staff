@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Questions - Axinity Staff Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://ik.imagekit.io/9llyyueko/STATIC%20IMAGES/icon256.png?updatedAt=1745897134054" type="image/png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Banner Section -->
+        <div class="banner-wrapper">
+            <div class="banner-image"></div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content-card">
+            <h1>General Questions</h1>
+            <p class="form-description">
+                Please answer the following questions thoughtfully and honestly. 
+                Fields marked with an asterisk (*) are required. Your responses will help us get to know you better.
+            </p>
+            
+             <form action="situational-questions.html" method="GET" id="generalQuestionsForm"> 
+                
+                
+                <div class="form-group">
+                    <label for="full-name">Full Name*</label>
+                    <input type="text" id="full-name" name="full_name" placeholder="e.g., Jane Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="discord-username">Discord Username & Tag*</label>
+                    <input type="text" id="discord-username" name="discord_username" placeholder="e.g., YourUsername#1234" pattern="^.{2,32}#[0-9]{4}$" title="Please enter in Username#0000 format" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="optional-text">(Optional for contact)</span></label>
+                    <input type="email" id="email" name="email" placeholder="e.g., your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Your Age* <span class="optional-text">(Minimum 15 years old)</span></label>
+                    <input type="number" id="age" name="age" required min="15" placeholder="e.g., 16">
+                </div>
+
+                <div class="form-group">
+                    <label for="timezone">Primary Timezone*</label>
+                    <select id="timezone" name="timezone" required>
+                        <option value="" disabled selected>Select your timezone...</option>
+                        <option value="PST">PST (Pacific Standard Time, UTC-8)</option>
+                        <option value="PDT">PDT (Pacific Daylight Time, UTC-7)</option>
+                        <option value="MST">MST (Mountain Standard Time, UTC-7)</option>
+                        <option value="CST_NA">CST (Central Standard Time - North America, UTC-6)</option>
+                        <option value="EST">EST (Eastern Standard Time, UTC-5)</option>
+                        <option value="EDT">EDT (Eastern Daylight Time, UTC-4)</option>
+                        <option value="AKST">AKST (Alaska Standard Time, UTC-9)</option>
+                        <option value="HST">HST (Hawaii Standard Time, UTC-10)</option>
+                        <option value="GMT">GMT (Greenwich Mean Time, UTC+0)</option>
+                        <option value="BST">BST (British Summer Time, UTC+1)</option>
+                        <option value="CET">CET (Central European Time, UTC+1)</option>
+                        <option value="EET">EET (Eastern European Time, UTC+2)</option>
+                        <option value="IST">IST (India Standard Time, UTC+5:30)</option>
+                        <option value="CST_Asia">CST (China Standard Time, UTC+8)</option>
+                        <option value="JST">JST (Japan Standard Time, UTC+9)</option>
+                        <option value="AEDT">AEDT (Australian Eastern Daylight Time, UTC+11)</option>
+                        <option value="NZST">NZST (New Zealand Standard Time, UTC+12)</option>
+                        <option value="Other">Other (Please specify)</option> <!-- Updated "Other" text -->
+                    </select>
+                </div>
+                
+                <!-- Hidden field for "Other" timezone -->
+                <div class="form-group hidden-field" id="other-timezone-group">
+                    <label for="other-timezone">Please specify your timezone:*</label>
+                    <input type="text" id="other-timezone" name="other_timezone" placeholder="e.g., GMT+3 or Your Region Time">
+                    <!-- 'required' attribute will be added/removed by JavaScript -->
+                </div>
+                
+                <div class="form-group">
+                    <label for="staff-position">Which Staff Position are you applying for?*</label>
+                    <select id="staff-position" name="staff_position" required>
+                        <option value="" disabled selected>Select a position...</option>
+                        <option value="Moderator">Moderator</option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="Game Moderator">Game Moderator (Roblox)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="hours-dedication">How many hours per week can you typically dedicate?*</label>
+                    <input type="text" id="hours-dedication" name="hours_dedication" placeholder="e.g., 10-15 hours, or specify daily availability" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="active-times">When are you most active?*</label>
+                    <textarea id="active-times" name="active_times" rows="4" placeholder="e.g., Weekday evenings (7 PM - 10 PM EST), flexible on weekends. Please be specific about days and times." required></textarea>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="navigation-buttons">
+                    <a href="index.html" class="cta-button secondary-button">Back</a> <!-- Renamed button -->
+                    <button type="submit" class="cta-button">Next: Situational Questions</button>
+                </div>
+            </form>
+        </div>
+
+         <footer class="app-footer">
+            <p><a href="https://discord.gg/2mCK999m" target="_blank" rel="noopener noreferrer" class="discord-link">Axinity Main Branch</a> - Staff Applications</p>
+        </footer>
+    </div>
+    <script src="form-persistence.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('generalQuestionsForm'); // Uses the ID
+
+            if (form) {
+                loadFormData(form); // Load any existing data first
+
+                // Save data on real input change
+                form.addEventListener('input', function() {
+                    saveFormData(form);
+                });
+
+                // --- Existing Timezone Logic ---
+                const timezoneSelect = document.getElementById('timezone');
+                const otherTimezoneGroup = document.getElementById('other-timezone-group');
+                const otherTimezoneInput = document.getElementById('other-timezone');
+
+                function handleTimezoneChange() {
+                    if (!timezoneSelect) return; 
+                    if (timezoneSelect.value === 'Other') {
+                        otherTimezoneGroup.style.display = 'block';
+                        otherTimezoneInput.setAttribute('required', 'required');
+                    } else {
+                        otherTimezoneGroup.style.display = 'none';
+                        otherTimezoneInput.removeAttribute('required');
+                    }
+                }
+
+                if (timezoneSelect) {
+                    timezoneSelect.addEventListener('change', handleTimezoneChange);
+                    handleTimezoneChange(); // Initial check based on loaded data
+                }
+                // --- End of Timezone Logic ---
+            } else {
+                console.error('Form with ID "generalQuestionsForm" not found.');
+            }
+        });
+    </script>
+</body>
+</html>
